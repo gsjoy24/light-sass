@@ -5,8 +5,8 @@ import Image from 'next/image';
 
 export default function Header() {
 	return (
-		<header className='sticky top-0 z-50'>
-			<div className='flex justify-center items-center py-3 bg-black text-white text-sm gap-3'>
+		<header className='sticky top-0 z-50 backdrop-blur-sm'>
+			<div className='flex justify-center items-center py-2 bg-black text-white text-sm gap-3'>
 				<p className='text-white/60 hidden md:block'>Streamline your workflow and boots your productivity.</p>
 				<div className='inline-flex items-center gap-1'>
 					<p>Get started by for free</p>
