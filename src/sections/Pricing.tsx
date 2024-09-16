@@ -55,10 +55,10 @@ const pricingTiers = [
 
 const Pricing = () => {
 	return (
-		<section className='py-24'>
+		<section className='bg-white py-24'>
 			<div className='container'>
 				<div className='section-heading'>
-					<h1 className='section-title'>Pricing</h1>
+					<h2 className='section-title'>Pricing</h2>
 					<p className='section-description mt-5'>
 						Free forever. Upgrade for unlimited tasks, better security, and more features.
 					</p>
@@ -66,13 +66,7 @@ const Pricing = () => {
 
 				<div className='flex flex-col lg:flex-row gap-6 items-center lg:items-end lg:justify-center'>
 					{pricingTiers.map(({ title, monthlyPrice, buttonText, popular, inverse, features }, index) => (
-						<div
-							key={index}
-							className={twMerge(
-								'p-10 border border-[#f1f1f1] rounded-xl shadow-[0_7px_14px_#eaeaea] max-w-sm w-full mt-10',
-								inverse === true && 'border-black bg-black text-white'
-							)}
-						>
+						<div key={index} className={twMerge('card', inverse === true && 'border-black bg-black text-white')}>
 							<div className='flex justify-between'>
 								<h3 className={twMerge('text-lg font-bold text-black/50', inverse === true && 'text-white/60')}>
 									{title}
@@ -87,7 +81,11 @@ const Pricing = () => {
 							</div>
 							<div className='flex items-baseline gap-1 mt-[2rem]'>
 								<span className='text-4xl font-bold tracking-tighter leading-none'>${monthlyPrice}</span>
-								<span className='tracking-tight font-bold text-black/50'>/month</span>
+								<span
+									className={twMerge('tracking-tight font-bold text-black/50', inverse === true && 'text-white/60')}
+								>
+									/month
+								</span>
 								<span></span>
 							</div>
 							<button
