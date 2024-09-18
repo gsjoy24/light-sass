@@ -5,7 +5,7 @@ import { FaArrowRightLong } from 'react-icons/fa6';
 
 const CallToAction = () => {
 	return (
-		<section className='bg-gradient-to-b from-white to-[#d2dcff] py-24'>
+		<section className='bg-gradient-to-b from-white to-[#d2dcff] py-24 overflow-hidden'>
 			<div className='container'>
 				<div className='section-heading relative'>
 					<h2 className='section-title mt-5'>Signup for free today</h2>
