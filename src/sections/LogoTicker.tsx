@@ -19,7 +19,7 @@ const LogoTicker = () => {
 							translateX: '-50%'
 						}}
 						transition={{
-							duration: 5,
+							duration: 15,
 							repeat: Infinity,
 							repeatType: 'loop',
 							ease: 'linear'
