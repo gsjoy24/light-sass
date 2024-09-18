@@ -84,19 +84,50 @@ export const Testimonials = () => {
 					</p>
 				</div>
 
-				<div className='flex flex-col gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)]'>
-					{firstColumn.map(({ text, imageSrc, name, username }) => (
-						<div key={username} className='card'>
-							<div>{text}</div>
-							<div className='flex items-center gap-2 mt-5'>
-								<Image src={imageSrc} width={40} height={40} alt={name} className='w-10 f-10 rounded-full' />
-								<div className='flex flex-col'>
-									<div className='font-medium tracking-tight leading-5'>{name}</div>
-									<div className='leading-5 tracking-tight'>{username}</div>
+				<div className='flex justify-center gap-6'>
+					<div className='flex flex-col gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)]'>
+						{firstColumn.map(({ text, imageSrc, name, username }) => (
+							<div key={username} className='card'>
+								<div>{text}</div>
+								<div className='flex items-center gap-2 mt-5'>
+									<Image src={imageSrc} width={40} height={40} alt={name} className='w-10 f-10 rounded-full' />
+									<div className='flex flex-col'>
+										<div className='font-medium tracking-tight leading-5'>{name}</div>
+										<div className='leading-5 tracking-tight'>{username}</div>
+									</div>
 								</div>
 							</div>
-						</div>
-					))}
+						))}
+					</div>
+
+					<div className='hidden md:flex flex-col gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)]'>
+						{secondColumn.map(({ text, imageSrc, name, username }) => (
+							<div key={username} className='card'>
+								<div>{text}</div>
+								<div className='flex items-center gap-2 mt-5'>
+									<Image src={imageSrc} width={40} height={40} alt={name} className='w-10 f-10 rounded-full' />
+									<div className='flex flex-col'>
+										<div className='font-medium tracking-tight leading-5'>{name}</div>
+										<div className='leading-5 tracking-tight'>{username}</div>
+									</div>
+								</div>
+							</div>
+						))}
+					</div>
+					<div className='hidden lg:flex flex-col gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)]'>
+						{thirdColumn.map(({ text, imageSrc, name, username }) => (
+							<div key={username} className='card'>
+								<div>{text}</div>
+								<div className='flex items-center gap-2 mt-5'>
+									<Image src={imageSrc} width={40} height={40} alt={name} className='w-10 f-10 rounded-full' />
+									<div className='flex flex-col'>
+										<div className='font-medium tracking-tight leading-5'>{name}</div>
+										<div className='leading-5 tracking-tight'>{username}</div>
+									</div>
+								</div>
+							</div>
+						))}
+					</div>
 				</div>
 			</div>
 		</section>
