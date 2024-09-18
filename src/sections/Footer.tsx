@@ -31,7 +31,7 @@ const Footer = () => {
 					<SocialInsta />
 				</div>
 				<p>
-					&copy; {currentYear} SaaS. All rights reserved. Recreated by{' '}
+					&copy; {currentYear} SaaS. All rights reserved. <br /> Recreated by{' '}
 					<Link className='underline underline-offset-4' href='http://goursahajoy.me/'>
 						Gour Saha Joy
 					</Link>
