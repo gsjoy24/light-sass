@@ -1,16 +1,25 @@
-import Image from 'next/image';
+'use client';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 import ArrowIcon from '../assets/arrow-right.svg';
 import CongImage from '../assets/cog.png';
 import cylinder from '../assets/cylinder.png';
 import noodle from '../assets/noodle.png';
 
 const Hero = () => {
+	const heroRef = useRef(null);
+	const { scrollYProgress } = useScroll({
+		target: heroRef,
+		offset: ['start end', 'end start']
+	});
+	const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
 	return (
 		<section
 			className='pt-8 pb-20 md:pt-4 md:pb-10 overflow-x-clip'
 			style={{
 				background: 'radial-gradient(ellipse 200% 100% at bottom left, #183EC2, #EAEEFE 100%)'
 			}}
+			ref={heroRef}
 		>
 			<div className='container'>
 				<div className='md:flex items-center'>
@@ -31,24 +40,39 @@ const Hero = () => {
 						</div>
 					</div>
 					<div className='mt-20 md:mt-0 md:h-[648px] md:flex-1 relative'>
-						<Image
-							src={CongImage}
+						<motion.img
+							src={CongImage.src}
 							alt='Cog'
 							className='md:absolute md:h-full md:w-auto md:max-w-none md:-left-6 lg:left-0'
+							animate={{
+								translateY: [-30, 30]
+							}}
+							transition={{
+								duration: 2,
+								repeat: Infinity,
+								repeatType: 'mirror',
+								ease: 'easeInOut'
+							}}
 						/>
-						<Image
-							src={cylinder}
+						<motion.img
+							src={cylinder.src}
 							height={220}
 							width={220}
 							alt='Cylinder'
 							className='hidden md:block md:absolute -top-8 -left-32'
+							style={{
+								translateY
+							}}
 						/>
-						<Image
-							src={noodle}
+						<motion.img
+							src={noodle.src}
 							height={220}
 							width={220}
 							alt='Noodle'
 							className='hidden md:block absolute top-[524px] left-[448px] rotate-[30deg]'
+							style={{
+								translateY
+							}}
 						/>
 					</div>
 				</div>
